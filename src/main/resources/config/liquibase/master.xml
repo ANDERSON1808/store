@@ -13,12 +13,12 @@
     <property name="clobType" value="clob" dbms="mysql, oracle, mssql, mariadb, postgresql"/>
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
-    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false" context="test"/>
-    <include file="config/liquibase/changelog/20210528005550_added_entity_Producto.xml" relativeToChangelogFile="false" context="test"/>
-    <include file="config/liquibase/changelog/20210528010106_added_entity_Archivo.xml" relativeToChangelogFile="false" context="test"/>
-    <include file="config/liquibase/changelog/20210528012559_added_entity_Carrito.xml" relativeToChangelogFile="false" context="test"/>
-    <include file="config/liquibase/changelog/20210528012559_added_entity_constraints_Carrito.xml" relativeToChangelogFile="false" context="test"/>
-    <include file="config/liquibase/changelog/20210528010106_added_entity_constraints_Archivo.xml" relativeToChangelogFile="false" context="test"/>
-    <include file="config/liquibase/changelog/20210528034910_added_entity_TopBusqueda.xml" relativeToChangelogFile="false" context="test"/>
-    <include file="config/liquibase/changelog/20210528034910_added_entity_constraints_TopBusqueda.xml" relativeToChangelogFile="false" context="test"/>
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false" />
+    <include file="config/liquibase/changelog/20210528005550_added_entity_Producto.xml" relativeToChangelogFile="false" />
+    <include file="config/liquibase/changelog/20210528010106_added_entity_Archivo.xml" relativeToChangelogFile="false" />
+    <include file="config/liquibase/changelog/20210528012559_added_entity_Carrito.xml" relativeToChangelogFile="false" />
+    <include file="config/liquibase/changelog/20210528012559_added_entity_constraints_Carrito.xml" relativeToChangelogFile="false" />
+    <include file="config/liquibase/changelog/20210528010106_added_entity_constraints_Archivo.xml" relativeToChangelogFile="false" />
+    <include file="config/liquibase/changelog/20210528034910_added_entity_TopBusqueda.xml" relativeToChangelogFile="false" />
+    <include file="config/liquibase/changelog/20210528034910_added_entity_constraints_TopBusqueda.xml" relativeToChangelogFile="false" />
 </databaseChangeLog>
