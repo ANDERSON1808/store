@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <!--
+        Added the entity Archivo.
+    -->
+    <changeSet id="20210528010106-1" author="anderson">
+        <createTable tableName="archivo">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nombre" type="varchar(100)">
+                <constraints nullable="false" />
+            </column>
+            <column name="path" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ubicacion" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="producto_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20210528010106-1-relations" author="anderson">
+
+    </changeSet>
+
+    <changeSet id="20210528010106-1-data" author="anderson" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/archivo.csv"
+                  separator=";"
+                  tableName="archivo">
+            <column name="id" type="numeric"/>
+            <column name="nombre" type="string"/>
+            <column name="path" type="string"/>
+            <column name="ubicacion" type="string"/>
+            <column name="producto_id" type="numeric"/>
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <!--
+        Added the entity TopBusqueda.
+    -->
+    <changeSet id="20210528034910-1" author="anderson">
+        <createTable tableName="top_busqueda">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="producto_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20210528034910-1-relations" author="anderson">
+
+    </changeSet>
+
+    <changeSet id="20210528034910-1-data" author="anderson" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/top_busqueda.csv"
+                  separator=";"
+                  tableName="top_busqueda">
+            <column name="id" type="numeric"/>
+            <column name="producto_id" type="numeric"/>
+            <!-- anderson-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

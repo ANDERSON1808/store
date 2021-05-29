@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <!--
+        Added the entity Producto.
+    -->
+    <changeSet id="20210528005550-1" author="anderson">
+        <createTable tableName="producto">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nombre" type="varchar(100)">
+                <constraints nullable="false" />
+            </column>
+            <column name="precio" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="precio_descuento" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="porcentaje" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="descripcion" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20210528005550-1-relations" author="anderson">
+
+    </changeSet>
+    <changeSet id="20210528005550-1-data" author="anderson" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/producto.csv"
+                  separator=";"
+                  tableName="producto">
+            <column name="id" type="numeric"/>
+            <column name="nombre" type="string"/>
+            <column name="precio" type="numeric"/>
+            <column name="precio_descuento" type="numeric"/>
+            <column name="porcentaje" type="numeric"/>
+            <column name="descripcion" type="string"/>
+            <!-- anderson-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>
